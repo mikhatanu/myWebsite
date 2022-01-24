@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content_css %}
+<link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="d-flex flex-column flex-fill flex-grow-1">
+
+<div class=" home-section d-flex p-5 flex-column align-items-center ">
+    <div class="flex-column flex-grow-1 p-auto m-auto ">
+        <h1 class = "fw-normal text-white">My personal Website</h1>
+    </div>
+    <div class = "flex-column flex-grow-1 p-2 m-auto "><img class =" img-fluid rounded mx-auto d-block" style="width:30%;height:auto;" src="{%static 'myPic.png' %}" alt="myPic"></div>
+    <div class = "flex-column flex-grow-1 p-2 fw-light "><h5>made using django</h2></div>
+</div>
+
+<div class="middle-section d-flex flex-column align-items-center flex-fill">
+    <div class = "p-5 flex-column flex-grow-1">
+        About this page
+    </div>
+    <div class = "p-5 flex-column flex-grow-1">
+        This page is to demonstrate the usage of django framework, a web framework based on python.
+    </div>
+</div>
+
+</div>
+{% endblock %}

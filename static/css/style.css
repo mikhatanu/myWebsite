@@ -1,0 +1,7 @@
+body {
+    font-family: Helvetica;
+    color: white;
+}
+a:hover{
+    filter:brightness(0.7);
+}

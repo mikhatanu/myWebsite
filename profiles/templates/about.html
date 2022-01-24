@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class = "d-flex flex-column flex-fill flex-grow-1">
+    <div class = "p-2 mt-4 d-flex flex-column align-items-center">
+        <h1 class = "text-body">{{name}}</h1>
+    </div>
+    {% if image %}
+        {% with image as x %}
+        <div class = "d-flex flex-column p-2 align-items-center">
+        <image class = "img-fluid rounded mx-auto d-block " style="width:30%;height:auto" src="{% static x %}"></image>
+        </div>
+        {% endwith %}
+    {% endif %}
+    <div class = "p-2 mt-4 d-flex flex-column align-items-center">
+        <h4 class = "text-secondary">{{summary}}</h4>
+    </div>
+</div>
+{% endblock %}

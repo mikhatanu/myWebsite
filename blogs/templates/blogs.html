@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+{% for i in blog_post %}
+    {% if i.featured %} 
+<div class = "card m-4">
+    <div class="card-body d-flex flex-column flex-fill flex-grow-">
+        
+        <div class="d-flex flex-column p-2 align-items-center">
+            <h1 class="text-body">{{ i.title }}</h1>
+        </div>
+        
+        {% if i.image %}
+        {% with i.image as x %}
+        <div class = "d-flex flex-column p-2 align-items-center">
+        <image class = "img-fluid rounded mx-auto d-block" style="width:30%;height:auto" src="{% static x %}"></image>
+        </div>
+        {% endwith %}
+        {% endif %}
+        
+        
+        <div class="d-flex flex-column p-2 align-items-left">
+            <h4 class ="text-secondary">{{ i.text|linebreaks }}</h4>
+        </div>
+        
+    
+    </div>
+</div>
+    {% endif %}
+    {% empty %}
+    <div class = "d-flex flex-column align-items-center"><h1 class="text-body">Nothing to show here. Come back later</h1></div>
+
+{% endfor %}
+{% endblock %}
